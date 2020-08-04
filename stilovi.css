@@ -1,0 +1,1035 @@
+@font-face{
+	font-family: RobotoCondensed;
+	src: url(fonts/RobotoCondensed-Regular.ttf);
+}
+@font-face{
+	font-family: Montserrat-Bold;
+	src: url(fonts/Montserrat-Bold.ttf);
+}
+@font-face{
+	font-family: Montserrat-SemiBold;
+	src: url(fonts/Montserrat-SemiBold.ttf);
+}
+@font-face{
+	font-family: Montserrat-Regular;
+	src: url(fonts/Montserrat-Regular.ttf);
+}
+
+@font-face{
+	font-family: Montserrat-Italic;
+	src: url(fonts/Montserrat-Italic.ttf);
+}
+
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+
+}
+body{
+	position: relative;
+}
+
+
+/*navigacija*/
+
+#navmob {
+    display: none;
+}
+
+.hamburger, .cross {
+	visibility: hidden;
+	position: absolute;
+	right: 40px;
+}
+
+#site_header{
+	position:fixed;
+	top: 0;
+	height: 50px;
+	width: 100%;
+	z-index: 99;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding:40px 40px 40px;
+	background-color: rgba(0,0,0,0.7);
+	transition: all 0.3s ease;
+	}
+
+header img{
+	width: 93px;
+}
+
+.navbar ul{
+	list-style: none;
+	display: inline-flex;
+	align-items: center;
+}
+
+.navbar ul li a{
+	text-decoration: none;
+	opacity: 0.5;
+  	color: #FFFFFF;
+  	text-transform: uppercase;
+  	font-family: RobotoCondensed;
+  	font-size: 14px;
+  	letter-spacing: 1px;
+  	line-height: 16px;
+  	padding: 17px 15px;
+  	margin-right: 20px;
+}
+#last{
+	margin-right: 0;
+	border-radius: 3px;
+	background-color: rgba(255,255,255,0.2);
+}
+
+#last:hover{
+	background-color: #FA2A2A;
+}
+.navbar ul li a:hover{
+	opacity: 1;
+	border-bottom: 1px solid #FA2A2A;
+}
+
+.navbar ul li:hover .dropdown ul li a{
+	padding: 0;
+	border-bottom: none;
+}  
+
+.about:hover{
+	border-bottom: none !important;
+}
+.dropdown{
+	display: none;
+}
+.navbar ul li:hover .dropdown{
+	display: block;
+	position: absolute;
+	margin-top: 15px;
+	width: 140px;
+  	border: 1px solid rgba(255,255,255,0.25);
+  	border-top: 1px solid #FA2A2A;
+  	background-color: rgba(255,255,255,0.15);
+}
+
+.navbar ul li:hover .dropdown ul{
+	display: block;
+	margin-left: 15px;
+	margin-right: 20px;
+}
+.navbar ul li:hover .dropdown ul li{
+	border-bottom: 1px solid #5C5C5C;
+	text-align: left;
+	padding-top: 14.5px;
+	padding-bottom: 14.5px;
+}
+
+.navbar ul li:hover .dropdown ul li:first-child{
+	padding-top: 15px;
+}
+
+.navbar ul li:hover .dropdown ul li:last-child{
+	border-bottom: none;
+	padding-bottom: 15px;
+}
+
+.navbar ul li:hover .dropdown ul li a{
+	color: #FFFFFF;
+  	font-family: RobotoCondensed;
+  	font-size: 13px;
+  	letter-spacing: 0.5px;
+  	line-height: 15px;
+  	text-transform: unset;
+}
+
+/* slajder */
+
+
+.prikaz{
+	display: none;
+	background-image: url('images/header-img-1440.jpg');
+	background-size: cover;
+	background-position: center;
+	height: 720px;
+	width: 100%;
+	position: relative;
+}
+
+.slider{
+	position: relative;
+	height: 720px;
+}
+
+.mali_naslov{
+	color: #FA2A2A;
+	font-family: RobotoCondensed;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	line-height: 14px;
+	margin-bottom: 10px;
+}
+
+.sadrzaj{
+	position: absolute;
+	top: 241px;
+	left: 150px;
+	width: 457px;
+}
+
+.sadrzaj h1{
+	margin-top: 15px;
+	color: #FFFFFF;
+  	font-family: Montserrat-Bold;
+  	font-size: 48px;
+  	letter-spacing: 0;
+  	line-height: 58px;
+  	margin-bottom: 40px;
+}
+
+.opis{
+	width: 310px;
+  	color: #CCC5C5;
+  	font-family: Montserrat-Regular;
+  	font-size: 14px;
+  	letter-spacing: 0;
+  	line-height: 26px;
+  	margin-left: 19.5px;
+  	border-left: 1px solid #FA2A2A;
+  	padding-left: 30.5px;
+}
+
+.slide{
+	animation-name: slajder;
+	animation-duration: 2s;
+}
+
+@keyframes slajder{
+	from{
+		opacity: 0.8;
+	}
+
+	to{
+		opacity: 1;
+	}
+}
+
+.polje{
+	position: absolute;
+	top: 50%;
+  	border: 1px solid rgba(255,255,255,0.25);
+  	border-radius: 3px 0 0 3px;
+  	background-color: rgba(255,255,255,0.15);
+  	opacity: 0.7;
+  	padding: 19px 22px;
+  	cursor: pointer;
+}
+
+.levo, .desno{
+	height: 13px;
+  	width: 7px;
+	background-image: url('images/chevron-right@2x.png');
+	background-size: cover;	
+}
+
+.polje:last-child{
+	transform: scaleX(-1);
+	right: 0;
+}
+
+.levo:hover, .desno:hover{
+	background-image: url('images/chevron-right-color@2x.png');
+}
+
+
+
+/* sekcija 2 */
+
+#aboutus{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin: 120px auto 90px;
+	height: 520px;
+}
+
+#kvadrat{
+	background-color: #212121;
+	margin-left: 97px;
+	width: 359px;
+	padding-top: 465px;
+	padding-bottom: 30px;
+	text-align: center;
+	color: #FFFFFF;
+	font-family: Montserrat-Italic;
+  	font-size: 14px;
+  	letter-spacing: 0;
+  	line-height: 25px;
+}
+
+#aboutus img{
+	position: absolute;
+	height: 270px;
+	width: 552px;
+	margin-top: 125px;
+}
+
+#drugi_deo{
+	padding-top: 64px;
+	margin-left: 226px;
+}
+
+.naslov{
+	font-family: Montserrat-Bold;
+	font-size: 38px;
+	margin-bottom: 40px;
+	letter-spacing: 0;
+	line-height: 47px;
+	color: #212121;;
+	width: 458px;
+}
+#podnaslov{
+ 	font-size: 20px;
+ 	color: #212121;
+ 	width: 458px;
+ 	font-family: Montserrat-Regular;
+ 	color: black;
+ 	margin-bottom: 20px;
+ 	letter-spacing: 0;
+ 	line-height: 30px;
+}
+
+.tekst{
+ 	width: 458px;
+ 	font-family: Montserrat-Regular;
+ 	font-size: 16px;
+ 	color: #4E4E4E;
+ 	line-height:25px;
+ 	letter-spacing: 0;
+}
+
+
+
+ /* baner */
+
+#banner2{
+ 	background-image: linear-gradient(270deg, rgba(0,0,0,0), #000000 100%),
+ 	url(images/section-banner-1920.jpg);
+ 	background-size: cover;
+ 	height: 540px;
+ 	width: 100%;
+ 	background-position: center;
+}
+
+#sadrzaj{
+ 	padding-top:106px;
+ 	margin-left: 150px;
+ 	width: 555px;
+}
+
+.naslov2 {
+ 	color: white !important;
+ 	width: 527px;
+  	color: #FFFFFF;
+  	font-family: Montserrat;
+  	font-size: 38px;
+  	font-weight: bold;
+  	letter-spacing: 0;
+  	line-height: 47px;
+  	margin-bottom: 20px;
+}
+
+.tekst2{
+	width: 527px;
+  	color: #CCC5C5;
+  	font-family: Montserrat;
+  	font-size: 14px;
+  	letter-spacing: 0;
+  	line-height: 26px;
+}
+
+#kartice{
+	display: flex;
+	flex-direction: row;
+	margin-top: 40px;
+}
+
+.kartica{
+	background-color: rgba(255,255,255,0.15);
+	margin-right: 29.5px;
+	border: 1px solid rgba(255,255,255,0.25);
+	background-color: rgba(255,255,255,0.3);
+	color: #FFFFFF;
+	text-align: center;
+	width: 166px;
+	height: 147px;
+}
+
+.kartica:last-child{
+	margin-right: 0;
+}
+
+.naziv{
+	font-family: RobotoCondensed;
+	letter-spacing: 3px;
+	line-height: 14px;
+	text-transform: uppercase;
+	font-size: 12px;
+	margin-bottom: 20px;
+	margin-top: 25.5px;
+}
+
+.broj{
+	font-family:Montserrat-SemiBold;
+	font-size: 28px;
+	line-height: 34px;
+	letter-spacing: 0;
+	margin-bottom: 10px;
+}
+
+.jedinica{
+	font-family: Montserrat-Italic;
+	font-size: 14px;
+	letter-spacing: 0;
+	line-height: 18px;
+}
+
+
+
+
+/* kartice */
+
+#products{
+	margin: 120px auto 100px ;
+	height: 497px;
+	width: 100%;
+}
+
+#container{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+#products h2{
+	text-align: center;
+	font-family: Montserrat-Bold;
+	font-size: 38px;
+	line-height: 47px; 
+	color: #212121;
+}
+
+.kartica_proizvoda{
+	margin-top: 60px;
+	width: 263px;
+	height: 390px;
+	margin-right: 29px;
+	border: 1px solid #F3F3F5;
+	border-radius: 3px;
+	box-shadow: 0.15px 8px 20px rgba(0,0,0,0.1);
+}
+
+.kartica_proizvoda:last-child{
+	margin-right: 0 !important;
+}
+
+.audi_q3{
+	height: 100px;
+	width: 192px;
+	margin: 20px 35px 14px 36px;
+}
+
+.opis_slike{
+	color: #929AAD;
+	font-family: Montserrat-Regular;
+	font-size: 14px;
+	letter-spacing: 0;
+	line-height: 18px;
+	margin-bottom: 5px;
+	text-align: center;
+}
+
+h3{
+	text-align: center;
+	margin-bottom: 20px;
+	color: #212121;
+	font-family: Montserrat-Bold;
+	font-size: 20px;
+	line-height: 30px;
+	letter-spacing: 0;
+}
+
+.prednosti{
+	display: flex;
+	flex-direction: row;
+	margin-left:20px;
+	align-items: center;
+}
+
+.prednosti img{
+	height: 7.5px;
+	width: 10.5px;
+	margin-right: 9.25px;
+
+}
+
+.prednosti p{
+	color: #929AAD;
+	font-family: Montserrat-Regular;
+	font-size: 13px;
+	letter-spacing: 0;
+	line-height: 30px;
+}
+
+.cena_dugme{
+	margin-top:20px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.cena{
+	color: #929AAD;
+	font-family: RobotoCondensed;
+	font-size: 13px;
+	letter-spacing: 0;
+	line-height: 13px;
+	margin-left: 20px;
+	margin-bottom: 2px;
+}
+
+.iznos{
+	color: #212121;
+	font-family: Montserrat-Bold;
+	font-size: 20px;
+	letter-spacing: 0;
+	line-height: 30px;
+	margin-left: 20px;
+}
+
+.cena_dugme button{
+	height: 34px;
+	width: 80px;
+	border-radius: 17px;
+	border-style: none;
+	background-color: rgba(250,42,42,0.1);
+	color: #FA2A2A;
+	font-size: 13px;
+	font-family: RobotoCondensed;
+	letter-spacing: 0;
+	line-height: 16px;
+	margin-right: 20px;
+
+}
+
+.audi_a4{
+	height: 79.88px;
+	width: 192px;
+	margin: 30px 35px 24.12px 36px;
+}
+
+.audi_a3{
+	height: 90px;
+	width: 192px;
+	margin: 25px 35px 19px 36px;
+}
+
+.audi_q7{
+	height: 97px;
+	width: 192px;
+	margin: 25px 35px 17px 36px;
+}
+
+
+
+/* kontakt */
+
+#contactus{
+	height: 760px;
+	width: 100%;
+	background: linear-gradient(135deg, #282A2F 0%, #000000 100%);
+	display: flex;
+	flex-direction: row;
+	overflow: hidden;
+	position: relative;
+}
+
+#levi_sadrzaj{
+	height: 593px;
+	margin-top: 120px;
+	margin-bottom: 47px;
+	position: relative;
+}
+
+#tekst_iznad{
+	height: 203px;
+	width: 570px;
+	margin-left: 150px;
+	position: absolute;
+	z-index: 55555;
+}
+
+#tekst_iznad h2{
+	font-size: 48px;
+	line-height: 58px;
+	width: 570px !important;
+}
+
+#contactus img{
+	height: 444px;
+	width: 1074px;
+	position: absolute;
+	top: 149px;
+	left: -174px;
+	z-index: 5;
+}
+
+/*forma*/
+
+form{
+	position: absolute;
+	left: 832px;
+	z-index: 2;
+	margin-top: 120px;
+	height: 520px;
+	width: 458px;
+	background-color: #011F05;
+	text-align: center;
+}
+
+input{
+	height: 60px;
+}
+
+input, textarea{
+ 	width: 361px;
+ 	border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 3px;
+    background-color: rgba(255,255,255,0.15);
+  	margin-bottom: 30px;
+  	color: #FFFFFF;
+  	font-family: RobotoCondensed;
+  	font-size: 14px;
+  	letter-spacing: 1px;
+  	line-height: 26px;
+  	text-transform: uppercase;
+  	padding-left: 15px;
+  	outline: none;
+}
+
+textarea{
+	height: 150px;
+	padding-top: 17px;
+}
+
+input:first-child{
+	margin-top: 52px;
+}
+
+input:last-child{
+	margin-bottom: 0;
+} 
+
+input[type="submit"]{
+	height: 56px;
+	width: 125px;
+	border: 2px solid rgba(255,255,255,0.3);
+  	text-align: center;
+  	background: none;
+  	cursor: pointer;
+  	padding-left: 0;
+}
+input[type="submit"]:hover{
+	background-color: rgba(255,255,255,0.15);
+}
+
+footer{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding-left: 150px;
+	padding-right: 40px;
+	width: 100%;
+	position: absolute;
+	bottom: 30px;
+}
+
+footer p{
+	opacity: 0.5;
+  	color: #FFFFFF;
+  	font-family: RobotoCondensed;
+  	font-size: 14px;
+  	letter-spacing: 1px;
+  	line-height: 16px;
+}
+
+footer div{
+	display: flex;
+	flex-direction: row;
+}
+
+footer div p:first-child{
+	margin-right: 30px;
+}
+
+
+
+
+/*MEDIA UPITI*/
+
+/*1140*/
+
+@media screen and (max-width: 1140px){
+
+/* sekcija 2 */
+	#aboutus{
+		flex-direction: column;
+		justify-content: center;
+		margin-top: 340px;
+		margin-bottom: 321px;
+	}
+
+	#kvadrat{
+		margin: 0 auto;
+	}
+
+	#aboutus img{
+		left: 14%;	
+	}
+
+	#drugi_deo{
+		margin:0 auto;
+	}
+
+/* baner */
+
+	#sadrzaj{
+	 	margin:0 auto;
+	}
+
+	#banner2{
+		background-position: left;
+	}
+
+/* kartice */
+
+	#products{
+		margin: 70px auto 120px ;
+		height: 887px;
+	}
+	#container{
+		flex-wrap: wrap;
+	}
+
+	.kartica_proizvoda:last-child{
+		margin-right: 29px;
+	}
+
+
+/* kontakt */
+
+	#tekst_iznad h2{
+		width: 460px !important;
+	}
+
+	#contactus img{
+		height: 392px;
+		width: 900px;
+		left: -220px;
+	}
+	form{
+		left: 550px;
+
+	}
+}
+
+
+
+/* 1000px */
+@media screen and ( max-width: 1000px ){
+
+/* kontakt */
+	#contactus img{
+		height: 392px;
+		width: 900px;
+		left: -260px;
+	}
+	form{
+		left: 500px;
+		width: 430px;
+	}
+}
+
+
+
+/* 870px */
+@media screen and ( max-width: 870px ){
+
+/* navigacija */
+
+	.navbar{
+		display: none;
+	}
+
+	#navmob{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		top: 80px;
+		left: 0;
+		width: 100%;
+		background-color: rgba(0,0,0,0.7);
+	}
+
+	#navmob a{
+		text-decoration: none;
+		opacity: 0.5;
+  		color: #FFFFFF;
+  		text-transform: uppercase;
+  		font-family: RobotoCondensed;
+  		font-size: 14px;
+  		letter-spacing: 1px;
+  		line-height: 16px;
+  		padding: 5px;
+  		margin-bottom: 10px;
+	}
+
+	#navmob a:hover{
+		opacity: 1;
+	}
+
+	.podmeni{
+		margin-bottom: 10px;
+		padding: 5px;
+	}
+
+	.podmeni_sadrzaj{
+		display: none;
+	}
+
+	.podmeni:hover .podmeni_sadrzaj{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.podmeni:hover .podmeni_sadrzaj a{
+		font-size: 11px !important;
+		color: #FA2A2A !important;
+		margin-bottom: 0 !important;
+	}
+
+	.podmeni:hover .podmeni_sadrzaj a:first-child{
+		margin-top: 10px;
+	}
+
+	.hamburger, .cross{
+		visibility: visible;
+		background:none;
+		border:none;
+		outline: none;
+		color: #FFFFFF;
+		cursor: pointer;
+		z-index: 9999;
+		line-height: 65px;
+		
+	}
+
+	.hamburger:hover, .cross:hover{
+		color: #FA2A2A;
+	}
+
+	.hamburger{
+		font-size: 1.4em;
+		padding: 2px 15px 0;
+	}
+
+	.cross{
+		font-size: 3em;
+		padding: 2px 17px 0 15px;
+	}
+
+
+/* kontakt */
+ 	#contactus{
+		height: 1300px;
+		flex-direction: column;
+	}
+
+	#contactus img{
+		height: 393px;
+		width: 900px;
+		left: -184px;
+	}
+
+/*forma*/
+
+	form{
+		left:150px;
+		top: 500px;
+	}
+}
+
+
+
+
+/* 600px */
+@media screen and ( max-width:600px ){
+
+
+
+/* slajder */
+	.sadrzaj{
+		left: 60px ;
+	}
+
+	.sadrzaj h1{
+  		font-size: 40px;
+  		width: 350px;
+  		margin-bottom: 30px;
+	}
+
+/*sekcija 2*/
+	#aboutus img{
+		left: 5px;
+		width: 432px;
+		height: 212px; 	
+	}
+
+	.naslov{
+		font-size: 37px;
+		width: 440px;
+		margin-left: 25px;
+	}
+
+	#podnaslov{
+	 	font-size: 20px;
+	 	width: 400px;
+	 	margin-left: 25px;
+	}
+
+	.tekst{
+	 	width: 400px;
+	 	font-size: 15px;
+	 	margin-left: 25px;
+	}
+
+	.mali_naslov{
+		margin-left: 25px;
+	}
+
+/* baner */
+ 	#banner2{
+ 		height: 833px;
+ 	}
+
+ 	#sadrzaj{
+ 		margin: 0 auto;
+ 		width: 450px;
+ 	}
+
+	.naslov2, .tekst2, #sadrzaj .mali_naslov {
+	 	width: 400px;
+	 	margin: 0 auto;
+	}
+
+	#kartice{
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.kartica_proizvoda{
+		margin-right: 0;
+	}
+
+	.kartica{
+		margin-right: 0;
+		margin-bottom: 20px;
+	}
+
+	.kartica:last-child{
+		margin-bottom: 0;
+	}
+
+	.naslov2 {
+	  	font-size: 37px;
+	  	
+	 }
+
+	.tekst2{
+	  	font-size: 13px;
+	  	
+	}
+
+
+/* kartice */
+	#products{
+		height: 1800px;
+	}
+
+	#products h2{
+		text-align: left;
+		margin-left: 25px;
+		width: 400px;
+		font-size: 37px;
+	}
+
+
+/* skontakt*/
+
+	#tekst_iznad{
+		width: 450px;
+		padding-left: 25px;
+		margin: 0 auto !important;
+	}
+
+	#tekst_iznad h2{
+		font-size: 40px;
+		width: 450px !important;
+	}
+
+	#contactus{
+		height: 1200px;
+	}
+
+	#contactus img{
+		left: -250px;
+		top: 190px;
+		height: 305px;
+		width: 700px;
+	}
+
+/* forma */
+	form{
+		left: 25px;
+		top: 450px;
+		height: 520px;
+		width: 400px;
+	}
+
+	input[type="submit"]{
+		width: 100px;
+	}
+
+	footer{
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+	footer p{
+	  	font-size: 12px;
+	  	margin-right: 10px;
+	}
+
+	footer div p:last-child{
+		margin-right: 0;
+	}
+}
